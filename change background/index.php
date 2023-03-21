@@ -7,14 +7,14 @@
   <title>Document</title>
 </head>
 
-<body style="background-color: <?php echo $_COOKIE["color"]; ?>">
+<body style="background-color: <?php if($_COOKIE["color"]){echo $_COOKIE["color"];} ?>">
 
   <?php
-  // echo $_COOKIE["color"];
+  echo $_COOKIE["color"];
   ?>
 
   <form action="colorCookie.php" method="POST">
-    <input type="color" name="color">
+    <input type="color" name="color" value="<?php if($_COOKIE["color"]){echo $_COOKIE["color"];} ?>">
     <input type="submit" value="Send">
   </form>
 </body>
